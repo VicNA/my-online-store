@@ -4,20 +4,16 @@ server:
     context-path: /app
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/geek_db
-#    url: jdbc:mysql://127.0.0.1:3306/geek_db?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-    username: root
-    password: zW0OWm2t8o04AKXFbRNV
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?currentShema=spring_app
+    username: postgres
+    password: OGeiyeSxrIM9zlDf9hjL
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
-#  h2:
-#    console:
-#      enabled: true
-#      settings:
-#        web-allow-others: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: false
